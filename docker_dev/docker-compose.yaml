@@ -26,7 +26,7 @@ services:
       context: composer
       dockerfile: Dockerfile
     volumes:
-      - ../src:/home/laravel
+      - ../app:/home/laravel
     environment:
       - APACHE_RUN_USER=#1000
       - COMPOSER_MEMORY_LIMIT=-1
@@ -42,14 +42,14 @@ services:
       context: npm
       dockerfile: Dockerfile
     volumes:
-      - ../src:/home
+      - ../app:/home
 
   artisan:
     build:
       context: artisan
       dockerfile: Dockerfile
     volumes:
-      - ../src:/home
+      - ../app:/home
     environment:
       - APACHE_RUN_USER=#1000
       - COMPOSER_MEMORY_LIMIT=-1
