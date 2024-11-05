@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped  
     volumes:
-      - ../src:/var/www/html    //исправить под действующий каталог
+      - ../app:/var/www/html    //исправить под действующий каталог
     environment:
       - APACHE_RUN_USER=#1000
       - COMPOSER_MEMORY_LIMIT=-1
