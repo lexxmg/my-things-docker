@@ -1,0 +1,6 @@
+docker-compose run --rm artisan migrate
+docker-compose run --rm artisan migrte:rollback
+
+docker-compose run --rm artisan make:controller ThingsController --resource --model=Thing
+
+docker-compose run --rm artisan route:list

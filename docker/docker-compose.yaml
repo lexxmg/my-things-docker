@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  web:
+    build:
+      context: apache
+      dockerfile: Dockerfile
+    restart: unless-stopped  
+    volumes:
+      - ../src:/var/www/html    //исправить под действующий каталог
+    environment:
+      - APACHE_RUN_USER=#1000
+      - COMPOSER_MEMORY_LIMIT=-1
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=laravel
+      - DB_USERNAME=root
+      - DB_PASSWORD=root  
+    ports:
+      - 3015:80
+      - 3016:443
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root             # пароль для базы данных (логин по умолчанию root)
+      MYSQL_DATABASE: laravel        # имя базы данных
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 9095:80                             # 9095 - порт по к-рому доступен phpMyAdmin вне контейнера (т.е. http://localhost:9095 )
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db    
+  

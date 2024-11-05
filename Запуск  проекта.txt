@@ -1,0 +1,47 @@
+Перейти в каталог с проектом: 
+  cd /docker
+
+Запустить Docker:
+  docker-compose up
+
+В другом терминала запустить установку Laravel,
+создаст каталог src и установит Learavel (src изначально должен отсутствовать или быть пустым!!!)
+
+  docker-compose run --rm composer create-project laravel/laravel .
+
+Установить laravel-nestedset:
+  docker-compose run --rm composer install --no-dev // установка без пакетов разработки 
+
+  docker-compose run --rm composer require kalnoy/nestedset
+  docker-compose run --rm composer require symfony/filesystem   // для создания ссылки на storage в  docker
+
+Выполнить npm install:
+  docker-compose run --rm npm install --production  // установка без пакетов разработки 
+  docker-compose run --rm npm install
+
+Поправить vite.config.js:
+  Пример находиться в каталоге npm
+  
+
+Разработка:
+
+Запустить vite:
+  docker-compose run --rm -p 5173:5173 npm run dev -- --host
+Попробовать: docker-compose run --rm -p 5173:5173  npm run dev
+
+Запустить сервер:
+  docker-compose run --rm -p 8000:8000  artisan serve --host=0.0.0.0
+	http://localhost:8000
+
+Команды npm выполняются:
+  docker-compose run --rm npm [команда]
+
+Команды artisan выполняются:
+  docker-compose run --rm artisan [команда]
+
+Создать ссылку на storage:
+  docker-compose run --rm artisan storage:link
+  docker-compose run --rm artisan storage:link --relative  //создание ссылки на storage в docker
+
+Удалить ссылку на storage:
+  docker-compose run --rm artisan storage:unlink  
