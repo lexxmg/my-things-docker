@@ -1,0 +1,59 @@
+.btn {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 165px;
+  height: 60px;
+
+  border: 1px solid transparent;
+  border-radius: 14px;
+
+  padding: 0;
+
+  box-shadow: none;
+  outline: none;
+
+  background-color: rgb(211, 213, 217);
+  
+  font-size: 18px;
+  font-weight: 600;
+
+  color: black;
+
+  cursor: pointer;
+}
+
+.btn--box.btn::after {
+  content: '';
+
+  position: absolute;
+  left: 5px;
+  top: calc(60px / 2 - (30px / 2));
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url(/public/storage/img/box.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.btn--things.btn::after {
+  content: '';
+
+  position: absolute;
+  left: 5px;
+  top: calc(60px / 2 - (30px / 2));
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url(/public/storage/img/things.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

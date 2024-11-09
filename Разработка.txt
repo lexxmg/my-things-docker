@@ -1,0 +1,22 @@
+Перейти в каталог с проектом: 
+  cd /app
+
+Запустить Docker:
+  ./vendor/bin/sail up -d
+
+Выполнить npm install:
+  ./vendor/bin/sail run npm install --production  // Только при первом запуске
+
+Выполнить artisan: 
+  ./vendor/bin/sail artisan migrate  // если требуеться
+
+Выполнить artisan: 
+  ./vendor/bin/sail artisan storage:link // если требуеться
+
+Запустить сервер разработки:
+  ./vendor/bin/sail npm run dev
+
+Остановить Docker:
+  ./vendor/bin/sail down -v    // с удалением контейнеров
+
+
