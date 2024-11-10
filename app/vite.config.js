@@ -9,6 +9,9 @@ export default defineConfig({
                     'resources/css/normalize.css',
                     'resources/css/master.css',
                     'resources/whhg-font/css/whhg.css',
+                    'resources/css/header.css',
+                    'resources/css/main.css',
+                    'resources/css/footer.css',
                     'resources/css/buttons.css',
                     'resources/js/app.js',
                     'resources/js/script.js'

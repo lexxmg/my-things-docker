@@ -1,0 +1,27 @@
+.footer {
+  
+}
+
+.footer-nav {
+
+}
+
+.footer-nav__list {
+
+}
+
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-nav-list__item {
+
+}
+
+
+@media (min-width: 640px) {
+  .footer-nav {
+    display: none;
+  }
+}

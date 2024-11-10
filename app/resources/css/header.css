@@ -1,0 +1,52 @@
+.header {
+
+}
+
+.header__title {
+
+}
+
+.nav-mob {
+  
+}
+
+.nav-mob__list {
+
+}
+
+.nav-mob-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-mob-list__item {
+
+}
+
+.header-nav {
+
+}
+
+.header-nav__list {
+
+}
+
+.header-nav-list {
+
+}
+
+.header-nav-list__item {
+
+}
+
+@media (min-width: 640px) {
+  .nav-mob {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-nav {
+    display: none;
+  }
+}

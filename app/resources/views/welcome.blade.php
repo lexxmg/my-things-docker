@@ -31,7 +31,7 @@
             <button class="btn btn--things">Все вещи</button>
             <a class="btn btn--box" href="#" @disabled(true)>Коробки</a>
             <button class="btn btn--box" @disabled(false)>Коробки</button>
-            <span class="icon-cgicenter text-4xl"></span>
+            <span class="icon-home text-4xl text-[#3fa157]"></span>
         </div>
         
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">

@@ -71,7 +71,7 @@
 .btn:hover:not(.disabled) {
   background-color: rgb(204, 204, 204);
 
-  color: rgb(63, 161, 87);
+  color: #3fa157;
 
   transition: background-color .15s, color .15s;
 }
