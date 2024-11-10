@@ -15,6 +15,7 @@
             @vite(['resources/css/app.css',
                     'resources/css/normalize.css',
                     'resources/css/master.css',
+                    'resources/whhg-font/css/whhg.css',
                     'resources/css/buttons.css',
                     'resources/js/app.js',
                     'resources/js/script.js'
@@ -30,6 +31,7 @@
             <button class="btn btn--things">Все вещи</button>
             <a class="btn btn--box" href="#" @disabled(true)>Коробки</a>
             <button class="btn btn--box" @disabled(false)>Коробки</button>
+            <span class="icon-cgicenter text-4xl"></span>
         </div>
         
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
