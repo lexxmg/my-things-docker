@@ -24,6 +24,8 @@
   color: black;
 
   cursor: pointer;
+
+  transition: background-color .15s, color .15s;
 }
 
 .btn--box.btn::after {
@@ -57,3 +59,33 @@
   background-size: contain;
   background-position: center;
 }
+
+.disabled {
+  color: rgb(74, 74, 74);
+
+  opacity: .5;
+
+  cursor: not-allowed;
+}
+
+.btn:hover:not(.disabled) {
+  background-color: rgb(204, 204, 204);
+
+  color: rgb(163, 78, 78);
+
+  transition: background-color .15s, color .15s;
+}
+
+.btn:active:not(.disabled) {
+  background-color: rgb(211, 213, 217);
+
+  color: white;
+
+  transition: background-color .15s, color .15s;
+}
+
+.btn:focus:not(.disabled) {
+  box-shadow: 0 0 0 2px blue;
+}
+
+

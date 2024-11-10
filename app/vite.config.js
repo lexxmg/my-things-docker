@@ -9,7 +9,8 @@ export default defineConfig({
                     'resources/css/normalize.css',
                     'resources/css/master.css',
                     'resources/css/buttons.css',
-                    'resources/js/app.js'
+                    'resources/js/app.js',
+                    'resources/js/script.js'
                 ],
             refresh: true,
         }),
