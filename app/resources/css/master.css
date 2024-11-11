@@ -69,10 +69,9 @@ h1, h2, h3, p, figure {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
 
-  min-height: 100%;
+  padding: 60px 0 0 0;
 }
 
 .darkened::before {
@@ -86,3 +85,9 @@ h1, h2, h3, p, figure {
 }
 
 /*============================================================*/
+
+@media (max-width: 736px) {
+  .wrapper {
+    padding: 110px 0 0 0;
+  }
+}
