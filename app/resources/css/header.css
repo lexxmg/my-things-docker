@@ -147,7 +147,9 @@
 
     padding: 0 10px;
     
-    background-color: white;
+    background-color: #f9f9f99b;
+
+    backdrop-filter: blur(10px);
   }
 
   .a--active {

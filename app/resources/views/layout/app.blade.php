@@ -39,7 +39,7 @@
                 <div class="header__center">
                     <nav class="header-nav">
                         <ul class="header-nav__list header-nav-list">
-                            <li @class(['header-nav-list__item', 'a--active' => true])>
+                            <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('home')])>
                                 <a class="header-nav-list__link" href="#">Главная</a>
                             </li>
                             <li @class(['header-nav-list__item', 'a--active' => false])>
@@ -62,7 +62,8 @@
             </header>
 
             <main class="main fixed-container">
-                <div style="height: 10000px;">
+                @foreach ($places as $item)
+                    <span>{{ $item }}</span>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur
                         dipisicing elit. At suscipit dolorem ipsa ad maiores ipsam inventore sint itaque voluptatibus cumque beatae sequi optio id vel quia, numquam eveniet exercitationem modi!
@@ -76,15 +77,14 @@
                         dipisicing elit. At suscipit dolorem ipsa ad maiores ipsam inventore sint itaque voluptatibus cumque beatae sequi optio id vel quia, numquam eveniet exercitationem modi!
                         dipisicing elit. At suscipit dolorem ipsa ad maiores ipsam inventore sint itaque voluptatibus cumque beatae sequi optio id vel quia, numquam eveniet exercitationem modi!
                         dipisicing elit. At suscipit dolorem ipsa ad maiores ipsam inventore sint itaque voluptatibus cumque beatae sequi optio id vel quia, numquam eveniet exercitationem modi!
-
                     </p>
-                </div>
+                @endforeach
             </main>
 
             <footer class="footer">
                 <nav class="footer-nav">
                     <ul class="footer-nav__list footer-nav-list">
-                        <li @class(['footer-nav-list__item', 'a--active' => true])>
+                        <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('home')])>
                             <span class="footer-nav-list__text icon-home"></span>
                             <a href="" class="footer-nav-list__link">Главная</a>
                         </li>
