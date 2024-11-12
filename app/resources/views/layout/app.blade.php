@@ -39,11 +39,17 @@
                 <div class="header__center">
                     <nav class="header-nav">
                         <ul class="header-nav__list header-nav-list">
-                            <li class="header-nav-list__item">
+                            <li @class(['header-nav-list__item', 'a--active' => true])>
+                                <a class="header-nav-list__link" href="#">Главная</a>
+                            </li>
+                            <li @class(['header-nav-list__item', 'a--active' => false])>
                                 <a class="header-nav-list__link" href="#">Вещи</a>
                             </li>
-                            <li class="header-nav-list__item">
+                            <li @class(['header-nav-list__item', 'a--active' => false])>
                                 <a class="header-nav-list__link" href="#">Коробки</a>
+                            </li>
+                            <li @class(['header-nav-list__item', 'a--active' => false])>
+                                <a class="header-nav-list__link" href="#">Поиск</a>
                             </li>
                         </ul>
                     </nav>
@@ -78,20 +84,22 @@
             <footer class="footer">
                 <nav class="footer-nav">
                     <ul class="footer-nav__list footer-nav-list">
-                        <li class="footer-nav-list__item">
+                        <li @class(['footer-nav-list__item', 'a--active' => true])>
                             <span class="footer-nav-list__text icon-home"></span>
                             <a href="" class="footer-nav-list__link">Главная</a>
                         </li>
-                        <li class="footer-nav-list__item">
+                        <li @class(['footer-nav-list__item', 'a--active' => false])">
                             <span class="footer-nav-list__text icon-search"></span>
                             <a href="" class="footer-nav-list__link">Поиск</a>
                         </li>
-                        <li class="footer-nav-list__item">
+                        <li @class(['footer-nav-list__item', 'a--active' => false])">
                             <span class="footer-nav-list__text icon-settingsfour-gearsalt"></span>
                             <a href="" class="footer-nav-list__link">Настройки</a>
                         </li>
                     </ul>
                 </nav>
+
+                <span class="footer__copy">&copy; lexxmg</span>
             </footer>
         </div>
     </body>

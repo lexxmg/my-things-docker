@@ -1,7 +1,7 @@
 .footer {
   height: 30px;
 
-  background-color: burlywood;
+  background-color: #00002c;
 }
 
 .footer-nav {
@@ -36,10 +36,21 @@
   text-align: center;
 }
 
+.footer__copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  width: 100%;
+  height: 100%;
+}
 
 
 @media (min-width: 736px) {
+  .footer {
+    color: white;
+  }
+
   .footer-nav {
     display: none;
   }
@@ -56,5 +67,9 @@
     height: 85px;
 
     background-color: #d3d5d9;
+  }
+
+  .footer__copy {
+    display: none;
   }
 }
