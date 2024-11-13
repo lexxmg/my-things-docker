@@ -10,7 +10,7 @@ class HomeController extends Controller
     {
         $places = [1, 2, 3, 4, 5, 6, 7]; // должна быть модель мест
         
-        return view('layout.app', [
+        return view('home', [
             'places' => $places
         ]);
     }

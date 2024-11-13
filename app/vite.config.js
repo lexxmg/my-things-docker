@@ -13,6 +13,7 @@ export default defineConfig({
                     'resources/css/header.css',
                     'resources/css/main.css',
                     'resources/css/footer.css',
+                    'resources/css/show.css',
                     'resources/js/app.js',
                     'resources/js/script.js'
                 ],
