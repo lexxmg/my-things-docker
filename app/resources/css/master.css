@@ -86,7 +86,7 @@ h1, h2, h3, p, figure {
 
 /*============================================================*/
 
-@media (max-width: 736px) {
+@media (max-width: 665px) {
   .wrapper {
     padding: 110px 0 0 0;
   }

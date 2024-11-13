@@ -9,10 +9,10 @@
         @vite([ 'resources/css/normalize.css',
                 'resources/css/master.css',
                 'resources/whhg-font/css/whhg.css',
+                'resources/css/buttons.css',
                 'resources/css/header.css',
                 'resources/css/main.css',
                 'resources/css/footer.css',
-                'resources/css/buttons.css',
                 'resources/js/app.js',
                 'resources/js/script.js'
             ]) 
@@ -62,6 +62,14 @@
             </header>
 
             <main class="main fixed-container">
+                <div class="main-top">
+                    <h2 class="main-top__title">Места</h2>
+
+                    <a class="btn main-top__btn main-top-btn" href="#" aria-label="Добавить место">
+                        <span class="main-top-btn__text">Добавить место</span>
+                        <span class="main-top-btn__icon icon-plus"></span>
+                    </a>
+                </div>
                 @foreach ($places as $item)
                     <span>{{ $item }}</span>
                     <p>
