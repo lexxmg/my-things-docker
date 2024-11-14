@@ -41,6 +41,10 @@
 }
 
 @media (min-width: 665px) {   /* Decktop версия */
+  .main {
+    min-height: calc(100% - 30px);
+  }
+
   .main-top__link-back {
     display: none;
   }

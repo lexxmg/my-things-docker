@@ -9,7 +9,7 @@
               <a class="btn btn--things" href="{{ route('things.index') }}" @disabled(false)>Все вещи</a>
           </li>
           <li class="nav-mob-list__item">
-              <a class="btn btn--box" href="#" @disabled(false)>Коробки</a>
+              <a class="btn btn--box" href="{{ route('boxes.index') }}" @disabled(false)>Коробки</a>
           </li>
       </ul>
   </nav>
@@ -23,11 +23,11 @@
               <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('things.index')])>
                   <a class="header-nav-list__link" href="{{ route('things.index') }}">Вещи</a>
               </li>
-              <li @class(['header-nav-list__item', 'a--active' => false])>
-                  <a class="header-nav-list__link" href="#">Коробки</a>
+              <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('boxes.index')])>
+                  <a class="header-nav-list__link" href="{{ route('boxes.index') }}">Коробки</a>
               </li>
-              <li @class(['header-nav-list__item', 'a--active' => false])>
-                  <a class="header-nav-list__link" href="#">Поиск</a>
+              <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('search.index')])>
+                  <a class="header-nav-list__link" href="{{ route('search.index') }}">Поиск</a>
               </li>
           </ul>
       </nav>
