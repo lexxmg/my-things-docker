@@ -11,8 +11,8 @@
                     <span class="footer-nav-list__text icon-search"></span>Поиск
                 </a>
           </li>
-          <li @class(['footer-nav-list__item', 'a--active' => false])">
-                <a class="footer-nav-list__link" href="#">
+          <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('setting')])">
+                <a class="footer-nav-list__link" href="{{ route('setting') }}">
                     <span class="footer-nav-list__text icon-settingsfour-gearsalt"></span>Настройки
                 </a>
           </li>

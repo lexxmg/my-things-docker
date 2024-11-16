@@ -29,6 +29,9 @@
               <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('search.index')])>
                   <a class="header-nav-list__link" href="{{ route('search.index') }}">Поиск</a>
               </li>
+              <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('setting')])>
+                <a class="header-nav-list__link" href="{{ route('setting') }}">Настройки</a>
+            </li>
           </ul>
       </nav>
   </div>

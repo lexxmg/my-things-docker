@@ -56,6 +56,10 @@
   margin: 0 20px 0 0;
 }
 
+.header-nav-list__item:last-child {
+  margin: 0 0 0 auto;
+}
+
 .header-nav-list__link {
   display: block;
 }
@@ -105,7 +109,6 @@
   color: #3fa157;
 }
 
-
 @media (min-width: 665px) {   /* Decktop версия */
   .nav-mob {
     display: none;
@@ -129,7 +132,21 @@
   }
 }
 
+@media (max-width: 800px) {
+  .header__left {
+    display: none;
+  }
+
+  .header-nav {
+    margin: 0 0 0 10px;
+  }
+}
+
 @media (max-width: 665px) {  /* Мобильная версия */
+  .header__left {
+    display: flex;
+  }
+
   .header-nav {
     display: none;
   }

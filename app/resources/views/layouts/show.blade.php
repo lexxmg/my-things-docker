@@ -12,6 +12,7 @@
                 'resources/css/buttons.css',
                 'resources/css/header.css',
                 'resources/css/main.css',
+                'resources/css/setting.css',
                 'resources/css/footer.css',
                 'resources/css/show.css'
             ]) 

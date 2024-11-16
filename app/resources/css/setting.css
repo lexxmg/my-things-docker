@@ -1,0 +1,37 @@
+.setting {
+  
+}
+
+.setting__ul {
+
+}
+
+.setting__items {
+  margin: 0 0 10px 0;
+}
+
+.setting__items:last-child {
+  margin: 70px 0 0 0;
+
+  color: red;
+}
+
+.setting__link {
+
+}
+
+.setting--btn {
+  width: 100%;
+}
+
+@media (min-width: 665px) {   /* Decktop версия */
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 665px) {  /* Мобильная версия */
+  .setting__items:last-child > .btn {
+    color: red;
+  }
+}  
