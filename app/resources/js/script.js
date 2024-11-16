@@ -25,26 +25,12 @@ if (setBtn) {
   const media = window.matchMedia('(min-width: 665px)');
 
   if (media.matches) {
-    setBtn.forEach(el => {
-      el.classList.remove('btn', 'setting--btn');
-    });
+    removeBtnClass();
   }
 
   media.addListener(() => {
-    console.log('test---');
-    
-    if ( move(665) ) {
-      setBtn.forEach(el => {
-        el.classList.remove('btn', 'setting--btn');
-      });
-    } else {
-      setBtn.forEach(el => {
-        el.classList.add('btn', 'setting--btn');
-      });
-    }
+    move(665) ? removeBtnClass() : addBtnClass();
   });
-  
-  //console.log(window.addEventListener('resize', move));
 }
 
 
@@ -52,4 +38,16 @@ function move(maxWidth){
 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   
   return viewport_width >= maxWidth || false;
+}
+
+function addBtnClass() {
+  setBtn.forEach(el => {
+    el.classList.add('btn', 'setting--btn');
+  });
+}
+
+function removeBtnClass() {
+  setBtn.forEach(el => {
+    el.classList.remove('btn', 'setting--btn');
+  });
 }
