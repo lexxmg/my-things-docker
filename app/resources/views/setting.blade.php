@@ -17,7 +17,7 @@
           <a class="setting__link btn setting--btn" href="#">Сменить пароль</a>
         </li>
         <li class="setting__items hidden">
-          <a class="setting__link btn setting--btn" href="#">Выход</a>
+          <a class="setting__link btn setting--btn" href="{{ route('logout') }}">Выход</a>
         </li>
         <li class="setting__items">
           <a class="setting__link btn setting--btn" href="#">Удалить аккаунт</a>

@@ -38,6 +38,8 @@
 
   <div class="header__right header-right">
       <span class="header-right__text">lexx@gmail.com</span>
-      <span class="header-right__text">выход</span>
+      <a class="header-right__link" href="{{ route('logout') }}">
+        <span class="header-right__text">выход</span>
+      </a>
   </div>
 </header>

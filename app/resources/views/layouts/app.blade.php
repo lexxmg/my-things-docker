@@ -10,6 +10,8 @@
                 'resources/css/master.css',
                 'resources/whhg-font/css/whhg.css',
                 'resources/css/buttons.css',
+                'resources/css/form.css',
+                'resources/css/login.css',
                 'resources/css/header.css',
                 'resources/css/main.css',
                 'resources/css/footer.css'
