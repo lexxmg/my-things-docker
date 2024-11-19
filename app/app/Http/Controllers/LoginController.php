@@ -17,7 +17,7 @@ class LoginController extends Controller
         $credentials = $request->validate([
             'name' => ['required',],
             'password' => ['required'],
-        ]);
+        ], $this->messages());
         
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
@@ -27,9 +27,9 @@ class LoginController extends Controller
         }
 
 
-        return back()->withErrors([
-            'mail' => 'Имя или пароль не верны',
-        ])->onlyInput('mail');
+        return back()->withInput()->withErrors([
+            'err' => 'Имя или пароль введены не верны'
+        ]);
     }
 
     public function logout()
@@ -37,5 +37,18 @@ class LoginController extends Controller
         auth('web')->logout();
 
         return redirect(route('login'));
+    }
+
+    /**
+     * Получить сообщения об ошибках для определенных правил валидации.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Поле имя должно быть заполнено',
+            'password.required' => 'Поле пароль должно быть заполнено'
+        ];
     }
 }

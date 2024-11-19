@@ -9,20 +9,37 @@
         @csrf
         <div class="form__inner">
           <label class="form__label" for="name">Имя:</label>
-          <input class="form__input" id="name" type="text" name="name">
+          <input class="form__input @error('name') form__input--errror @enderror" 
+                id="name"
+                type="text"
+                name="name"
+                value="{{ old('name') }}"
+          >
         </div>
 
-        @error('mail')
-          <p>{{ $errors->first('mail') }}</p>
+        @error('name')
+          <p class="form__error">{{ $message }}</p>
         @enderror
 
         <div class="form__inner">
           <label class="form__label" for="password">Пароль:</label>
-          <input class="form__input" id="password" type="password" name="password">
+          <input class="form__input @error('password') form__input--errror @enderror"
+                id="password" 
+                type="password" 
+                name="password"
+          >
         </div>
 
+        @error('password')
+          <p class="form__error">{{ $message }}</p>
+        @enderror
+
+        @error('err')
+          <p class="form__error">{{ $errors->first('err') }}</p>
+        @enderror
+
         <div class="form__btn-container">
-          <button class="form__btn">Войти</button>
+          <button class="form__btn btn">Войти</button>
         </div>
       </form>
     </div>
