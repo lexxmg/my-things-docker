@@ -16,6 +16,7 @@
                 'resources/css/main.css',
                 'resources/css/setting.css',
                 'resources/css/password.css',
+                'resources/css/destroy.css',
                 'resources/css/footer.css',
                 'resources/css/show.css'
             ]) 

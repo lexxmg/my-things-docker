@@ -13,7 +13,10 @@ class PasswordController extends Controller
      */
     public function index()
     {
-        return view('password', ['title' => 'Изменить пароль']);
+        return view('password', [
+            'title' => 'Изменить пароль',
+            'url' => route('setting')
+        ]);
     }
 
     /**
@@ -21,7 +24,10 @@ class PasswordController extends Controller
      */
     public function create()
     {
-        return view('logoutAll', ['title' => 'Выйти на всех устройствах кроме текущего']);
+        return view('logoutAll', [
+            'title' => 'Выйти на всех устройствах кроме текущего',
+            'url' => route('setting')
+        ]);
     }
 
     /**

@@ -23,7 +23,7 @@
           <a class="setting__link btn setting--btn" href="{{ route('logout') }}">Выход</a>
         </li>
         <li class="setting__items">
-          <a class="setting__link btn setting--btn" href="#">Удалить аккаунт</a>
+          <a class="setting__link btn setting--btn" href="{{ route('destroy.index') }}">Удалить аккаунт</a>
         </li>
       </ul>
     </div>

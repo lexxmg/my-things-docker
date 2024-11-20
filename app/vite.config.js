@@ -18,6 +18,7 @@ export default defineConfig({
                     'resources/css/setting.css',
                     'resources/css/password.css',
                     'resources/css/show.css',
+                    'resources/css/destroy.css',
                     'resources/js/app.js',
                     'resources/js/script.js'
                 ],

@@ -11,7 +11,7 @@ class ThingController extends Controller
      */
     public function index()
     {
-        return view('all-things', ['title' => 'Все вещи']);
+        return view('all-things', ['title' => 'Все вещи', 'url' => url()->previous()]);
     }
 
     /**

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BoxController;
+use App\Http\Controllers\DestroyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PasswordController;
@@ -20,6 +21,9 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
   Route::get('/', [HomeController::class, 'index'])->name('home');
 
   Route::get('setting', [SettingController::class, 'index'])->name('setting');
+
+  Route::get('destroy', [DestroyController::class, 'index'])->name('destroy.index');
+  Route::delete('destroy/{id}', [DestroyController::class, 'destroy'])->name('destroy');
 
   Route::resource('password', PasswordController::class);
   Route::resource('things', ThingController::class);

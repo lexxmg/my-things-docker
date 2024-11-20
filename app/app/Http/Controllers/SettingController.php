@@ -8,6 +8,6 @@ class SettingController extends Controller
 {
     public function index()
     {
-        return view('setting', ['title' => 'Настройки']);
+        return view('setting', ['title' => 'Настройки', 'url' => route('home')]);
     }
 }

@@ -11,7 +11,7 @@ class BoxController extends Controller
      */
     public function index()
     {
-        return view('boxes', ['title' => 'Коробки']);
+        return view('boxes', ['title' => 'Коробки', 'url' => url()->previous()]);
     }
 
     /**
