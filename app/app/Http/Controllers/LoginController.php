@@ -19,7 +19,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ], $this->messages());
         
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
 
             return redirect(route('home'));
@@ -32,9 +32,12 @@ class LoginController extends Controller
         ]);
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
         auth('web')->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
         return redirect(route('login'));
     }

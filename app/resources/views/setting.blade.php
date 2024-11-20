@@ -14,7 +14,10 @@
           <a class="setting__link btn setting--btn" href="#">Администрирование</a>
         </li>
         <li class="setting__items">
-          <a class="setting__link btn setting--btn" href="#">Сменить пароль</a>
+          <a class="setting__link btn setting--btn" href="{{ route('password.index') }}">Сменить пароль</a>
+        </li>
+        <li class="setting__items">
+          <a class="setting__link btn setting--btn" href="{{ route('password.create') }}">Выйти на всех устройствах</a>
         </li>
         <li class="setting__items hidden">
           <a class="setting__link btn setting--btn" href="{{ route('logout') }}">Выход</a>

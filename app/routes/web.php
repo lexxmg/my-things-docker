@@ -3,6 +3,7 @@
 use App\Http\Controllers\BoxController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\ThingController;
@@ -14,12 +15,13 @@ Route::middleware('guest')->group(function () {
   Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'auth.session'])->group(function () {
   Route::get('logout', [LoginController::class, 'logout'])->name('logout');
   Route::get('/', [HomeController::class, 'index'])->name('home');
 
   Route::get('setting', [SettingController::class, 'index'])->name('setting');
 
+  Route::resource('password', PasswordController::class);
   Route::resource('things', ThingController::class);
   Route::resource('boxes', BoxController::class);
   Route::resource('search', SearchController::class);
