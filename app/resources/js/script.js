@@ -1,7 +1,7 @@
 "use strict";
 
-const btn = document.querySelectorAll('.btn');
-const setBtn = document.querySelectorAll('.setting__link');
+const btn = document.querySelectorAll('.btn'),
+      removeBtn = document.querySelectorAll('.remove-btn-js');
 
 
 if (btn) {
@@ -21,14 +21,14 @@ if (btn) {
   });
 }
 
-if (setBtn) {
+if (removeBtn) {
   const media = window.matchMedia('(min-width: 665px)');
 
   if (media.matches) {
     removeBtnClass();
   }
 
-  media.addListener(() => {
+  media.addEventListener('change', () => {
     move(665) ? removeBtnClass() : addBtnClass();
   });
 }
@@ -41,13 +41,13 @@ function move(maxWidth){
 }
 
 function addBtnClass() {
-  setBtn.forEach(el => {
+  removeBtn.forEach(el => {
     el.classList.add('btn', 'setting--btn');
   });
 }
 
 function removeBtnClass() {
-  setBtn.forEach(el => {
+  removeBtn.forEach(el => {
     el.classList.remove('btn', 'setting--btn');
   });
 }

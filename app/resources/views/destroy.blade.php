@@ -13,10 +13,10 @@
       @csrf
       @method('DELETE')
 
-      <button class="setting__link btn setting--btn" >Удалить аккаунт</button>
+      <button class="btn setting--btn remove-btn-js" >Удалить аккаунт</button>
     </form>
     
-    <a class="setting__link btn setting--btn" href="{{ route('setting') }}">Отмена</a>
+    <a class="btn setting--btn remove-btn-js" href="{{ route('setting') }}">Отмена</a>
   </main>
 
   @include('partials.footer')
