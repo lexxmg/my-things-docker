@@ -35,6 +35,8 @@
 
 .header__center {
   width: 1024px;
+
+  padding: 0 10px;
 }
 
 .header-nav {

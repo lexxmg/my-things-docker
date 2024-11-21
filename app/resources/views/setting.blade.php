@@ -10,9 +10,11 @@
     
     <div class="setting">
       <ul class="setting__ul">
-        <li class="setting__items">
-          <a class="setting__link btn setting--btn remove-btn-js" href="#">Администрирование</a>
-        </li>
+        @if ($isAdmin)
+          <li class="setting__items">
+            <a class="setting__link btn setting--btn remove-btn-js" href="#">Администрирование</a>
+          </li>
+        @endif
         <li class="setting__items">
           <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('password.index') }}">Сменить пароль</a>
         </li>
