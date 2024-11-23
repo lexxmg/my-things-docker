@@ -27,11 +27,13 @@
         @endif
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+        
         <div class="flex justify-around bg-white">
             <button class="btn btn--things">Все вещи</button>
             <a class="btn btn--box" href="#" @disabled(true)>Коробки</a>
             <button class="btn btn--box" @disabled(false)>Коробки</button>
             <span class="icon-home text-4xl text-[#3fa157]"></span>
+            <a class="header-right__link" href="{{ route('admin.logout') }}">выход</a>
         </div>
         
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
