@@ -1,13 +1,15 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('title', 'Авторизация')
 
 @section('content')
-  <div class="login">
+  <div class="login admin-auth">
     <div class="form login__form">
       <form class="form__form" action="{{ route('admin.authenticate') }}" method="POST">
         @csrf
         <div class="form__inner">
+          <span class="admin-auth__text">Администратор</span>
+
           <label class="form__label" for="name">Имя:</label>
           <input class="form__input @error('name') form__input--errror @enderror" 
                 id="name"

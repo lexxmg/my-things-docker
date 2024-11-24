@@ -78,11 +78,20 @@ class PasswordController extends Controller
 
         $user = User::find($id);
 
+        $reName = true;
+
+        if ($user->name === $request->name) {
+            $reName = false;
+        }
+        
+
         $credentials = $request->validate([
+            'name' => ['required', 'max:20', 'regex:/^[a-z, 0-9]+$/i', $reName ? 'unique:' . User::class : 'required'],
             'password' => ['required', 'confirmed'], //Password::min(8)->letters()
             'password_confirmation' => ['required',],
         ], $this->messages());
 
+        $user->name = $credentials['name'];
         $user->password = bcrypt($credentials['password']);
         $user->save();
 
@@ -90,7 +99,7 @@ class PasswordController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        if (Auth::attempt(['name' => $user->name, 'password' => $credentials['password']], true)) {
+        if (Auth::attempt(['name' => $credentials['name'], 'password' => $credentials['password']], true)) {
             $request->session()->regenerate();
 
             try {
@@ -126,6 +135,10 @@ class PasswordController extends Controller
     public function messages(): array
     {
         return [
+            'name.required' => 'Поле имя должно быть заполнено',
+            'name.unique' => 'Данное имя уже используеться',
+            'name.regex' => 'Должны быть только латинские буквы',
+            'name.max' => 'Имя может содержать на больше 20 символов',
             'password.required' => 'Поле пароль должно быть заполнено',
             'password_confirmation.required' => 'Поле подтверждение пароля должно быть заполнено',
             'password.confirmed' => 'Пароли не совпадают!',

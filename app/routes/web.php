@@ -11,12 +11,12 @@ use App\Http\Controllers\ThingController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware('guest')->group(function () {
+Route::middleware('guest:web')->group(function () {
   Route::get('login', [LoginController::class, 'index'])->name('login');
   Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 });
 
-Route::middleware(['auth', 'auth.session'])->group(function () {
+Route::middleware(['auth:web', 'auth.session'])->group(function () {
   Route::get('logout', [LoginController::class, 'logout'])->name('logout');
   Route::get('/', [HomeController::class, 'index'])->name('home');
 

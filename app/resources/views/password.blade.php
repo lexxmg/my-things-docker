@@ -15,6 +15,21 @@
           @method('PUT')
 
           <div class="form__inner">
+            <label class="form__label" for="name">Имя:</label>
+            <input class="form__input @error('name') form__input--errror @enderror" 
+                  id="name"
+                  type="name"
+                  name="name"
+                  value={{ old('name', auth('web')->user()->name) }}
+            >
+          </div>
+  
+          @error('name')
+            <p class="form__error">{{ $message }}</p>
+          @enderror
+  
+
+          <div class="form__inner">
             <label class="form__label" for="password">Новый пароль:</label>
             <input class="form__input @error('password') form__input--errror @enderror" 
                   id="password"
