@@ -14,6 +14,10 @@
             <span class="main-top-btn__icon icon-plus"></span>
         </a>
     </div>
+
+    @foreach ($users as $item)
+      <p>{{ $item->name }}</p>
+    @endforeach
   </main>
 
   @include('admin.partials.footer')

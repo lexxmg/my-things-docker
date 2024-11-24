@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $users = DB::table('users')->get();
+
+        return view('admin.home', ['users' => $users]);
     }
 
     /**

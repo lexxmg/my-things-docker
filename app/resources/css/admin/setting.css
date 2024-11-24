@@ -1,0 +1,78 @@
+.setting {
+  
+}
+
+.setting__ul {
+
+}
+
+.setting__items {
+  display: flex;
+
+  margin: 0 0 10px 0;
+}
+
+.setting__items:last-child {
+  margin: 70px 0 0 0;
+
+  color: red;
+}
+
+.setting__link {
+  
+}
+
+
+.setting--btn {
+  width: 100%;
+}
+
+@media (min-width: 665px) {   /* Decktop версия */
+  .hidden {
+    display: none;
+  }
+
+  .setting__link {
+    position: relative;
+    display: block;
+  }
+
+  .setting__link:hover {
+    color: #3fa157;
+  }
+  
+  .setting__link:hover::after {
+    content: "";
+    position: absolute;
+    top: calc((30px - 20px) / -2);
+    left: calc(10px / -2);
+  
+    width: calc(100% + 10px);
+    height: 30px;
+  
+    border: 1px solid #d3d5d9;
+    border-radius: 12px;
+  
+    background-color: #d3d5d9;
+  
+    z-index: -1;
+  }
+  
+  .setting__items:last-child > .setting__link:hover {
+    color: #d3d5d9;
+  }
+  
+  .setting__items:last-child > .setting__link:hover::after {
+    border-color: red;
+  
+    background-color: red;
+  
+    color: #d3d5d9;
+  }  
+}
+
+@media (max-width: 665px) {  /* Мобильная версия */
+  .setting__items:last-child > .btn {
+    color: red;
+  }
+}  

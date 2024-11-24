@@ -14,7 +14,7 @@
                 'resources/css/login.css',
                 'resources/css/header.css',
                 'resources/css/main.css',
-                'resources/css/setting.css',
+                'resources/css/admin/setting.css',
                 'resources/css/password.css',
                 'resources/css/destroy.css',
                 'resources/css/footer.css',

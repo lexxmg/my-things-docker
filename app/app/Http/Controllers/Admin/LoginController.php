@@ -20,7 +20,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ], $this->messages());
         
-        if (Auth::guard('admin')->attempt($credentials, true)) {
+        if (Auth::guard('admin')->attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect(route('admin.user.index'));
