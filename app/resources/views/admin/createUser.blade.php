@@ -10,7 +10,7 @@
 
     <div class="create-user">
       <div class="form create-user__form">
-        <form class="form__form" action="{{ route('admin.user.store', auth('admin')->user()->id) }}" method="POST">
+        <form class="form__form" action="{{ route('admin.user.store') }}" method="POST">
           @csrf
          
           <div class="form__inner">

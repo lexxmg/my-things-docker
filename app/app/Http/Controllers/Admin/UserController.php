@@ -59,7 +59,11 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        dd('l;ajmaerjhpbaeorjbmpaerojbmaperojnuaep  ' . $id);
+        return view('admin.destroyUser', [
+            'id' => $id,
+            'title' => 'Удалить пользователя',
+            'url' => route('admin.user.index'),
+        ]);
     }
 
     /**
@@ -107,7 +111,7 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         User::destroy($id);
-
+        
         return redirect(route('admin.user.index'));
     }
 
