@@ -9,6 +9,11 @@
     @include('partials.main-top')
     
     <div class="setting">
+      <div class="setting__top">
+        <span class="setting__text">Текущий пользователь:</span>
+        <span class="setting__text">{{ auth('web')->user()->name }}</span>
+      </div>
+
       <ul class="setting__ul">
         @if ($isAdmin)
           <li class="setting__items">

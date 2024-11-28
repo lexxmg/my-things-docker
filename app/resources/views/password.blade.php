@@ -18,7 +18,7 @@
             <label class="form__label" for="name">Имя:</label>
             <input class="form__input @error('name') form__input--errror @enderror" 
                   id="name"
-                  type="name"
+                  type="text"
                   name="name"
                   value={{ old('name', auth('web')->user()->name) }}
             >

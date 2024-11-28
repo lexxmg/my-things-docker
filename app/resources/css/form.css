@@ -1,6 +1,6 @@
 .form {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 
   width: 100%;
   max-width: 400px;
@@ -38,6 +38,37 @@
 
   border: 1px solid #d3d5d9;
   border-radius: 14px;
+}
+
+.form__textarea {
+  width: 100%;
+  height: 100px;
+
+  padding: 5px;
+
+  border: 1px solid #d3d5d9;
+  border-radius: 14px;
+
+  resize: none;
+}
+
+.form-inner-checkbox {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 20px;
+}
+
+.form-inner-checkbox__label {
+  display: block;
+
+}
+
+.form-inner-checkbox__input {
+  display: block;
+
+  margin: 0 0 0 10px;
 }
 
 .form__btn-container {

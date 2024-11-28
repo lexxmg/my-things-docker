@@ -2,6 +2,18 @@
   
 }
 
+.setting__top {
+  display: flex;
+
+  margin: 0 0 12px 0;
+}
+
+.setting__text {
+  display: block;
+
+  margin: 0 10px 0 0;
+}
+
 .setting__ul {
 
 }
@@ -29,6 +41,10 @@
 
 @media (min-width: 665px) {   /* Decktop версия */
   .hidden {
+    display: none;
+  }
+
+  .setting__top {
     display: none;
   }
 

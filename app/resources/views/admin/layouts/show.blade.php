@@ -13,10 +13,12 @@
                 'resources/css/form.css',
                 'resources/css/login.css',
                 'resources/css/header.css',
-                'resources/css/main.css',
+                'resources/css/admin/main.css',
                 'resources/css/admin/setting.css',
+                'resources/css/admin/edit-user.css',
                 'resources/css/password.css',
                 'resources/css/destroy.css',
+                'resources/css/admin/create-user.css',
                 'resources/css/footer.css',
                 'resources/css/show.css'
             ]) 

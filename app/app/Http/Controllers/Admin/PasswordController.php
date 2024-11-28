@@ -16,7 +16,7 @@ class PasswordController extends Controller
     {
         return view('admin.password', [
             'title' => 'Изменить пароль',
-            'url' => route('setting')
+            'url' => route('admin.setting')
         ]);
     }
 
