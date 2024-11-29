@@ -24,6 +24,7 @@ export default defineConfig({
                     'resources/css/password.css',
                     'resources/css/show.css',
                     'resources/css/destroy.css',
+                    'resources/css/admin/destroy.css',
                     'resources/js/app.js',
                     'resources/js/script.js',
                     'resources/js/user.js',

@@ -62,7 +62,7 @@
         </form>
 
         <div class="edit-user__btn-container-bottom">
-          <a class="edit-user__link btn" href="{{ route('admin.user.show', $id) }}">Удалить плользователя</a>
+          <a class="edit-user__link btn destroy--red" href="{{ route('admin.user.show', $id) }}">Удалить плользователя</a>
         </div>
       </div>
     </div>

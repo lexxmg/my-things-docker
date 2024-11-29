@@ -1,7 +1,8 @@
 "use strict";
 
 const btn = document.querySelectorAll('.btn'),
-      removeBtn = document.querySelectorAll('.remove-btn-js');
+      removeBtn = document.querySelectorAll('.remove-btn-js'),
+      toAdminBtn = document.querySelector('.admin-btn-js');
 
 
 if (btn) {
@@ -33,6 +34,16 @@ if (removeBtn) {
   });
 }
 
+if (toAdminBtn) {
+  const url = window.location.origin + '/admin/user';
+
+  toAdminBtn.addEventListener('click', event => {
+    event.preventDefault();
+
+    openWindow(url);
+  });
+}
+
 
 function move(maxWidth){
 	const viewport_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -50,4 +61,8 @@ function removeBtnClass() {
   removeBtn.forEach(el => {
     el.classList.remove('btn', 'setting--btn');
   });
+}
+
+function openWindow(url) {
+  window.open(url);
 }

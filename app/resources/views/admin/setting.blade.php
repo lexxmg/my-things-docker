@@ -14,7 +14,7 @@
           <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('admin.password.index') }}">Сменить пароль</a>
         </li>
         <li class="setting__items hidden">
-          <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('admin.logout') }}">Выход</a>
+          <a class="setting__link btn setting--btn remove-btn-js admin-close-btn-js" href="{{ route('admin.logout') }}">Выход</a>
         </li>
       </ul>
     </div>

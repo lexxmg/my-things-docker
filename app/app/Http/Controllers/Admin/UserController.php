@@ -59,8 +59,10 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
+        $user = User::find($id);
+
         return view('admin.destroyUser', [
-            'id' => $id,
+            'user' => $user,
             'title' => 'Удалить пользователя',
             'url' => route('admin.user.index'),
         ]);

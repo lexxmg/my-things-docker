@@ -1,6 +1,7 @@
 "use strict";
 
-const users = document.querySelector('.user-js');
+const users = document.querySelector('.user-js'),
+      toAdminBtn = document.querySelectorAll('.admin-close-btn-js');
 
 
 if (users) {
@@ -97,6 +98,22 @@ if (users) {
       localStorage.setItem('prevUrl', prevMem);
       localStorage.setItem('currentPage', currentPage);
     } 
+  });
+}
+
+if (toAdminBtn) {
+  const url = window.location.origin + '/admin/logout';
+
+  toAdminBtn.forEach(btn => {
+    btn.addEventListener('click', event => {
+      event.preventDefault();
+      
+      fetch(url).then(res => {
+        if (res.ok) {
+          window.close();
+        }
+      });
+    });
   });
 }
 

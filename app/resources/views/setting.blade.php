@@ -17,9 +17,7 @@
       <ul class="setting__ul">
         @if ($isAdmin)
           <li class="setting__items">
-            <a class="setting__link btn setting--btn remove-btn-js"
-              href={{ route('admin.user.index') }}
-              target="_blank"
+            <a class="setting__link btn setting--btn remove-btn-js admin-btn-js"
               >Администрирование
             </a>
           </li>

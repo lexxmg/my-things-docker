@@ -23,7 +23,7 @@
                 'resources/css/admin/setting.css',
                 'resources/css/admin/edit-user.css',
                 'resources/css/password.css',
-                'resources/css/destroy.css',
+                'resources/css/admin/destroy.css',
                 'resources/css/admin/create-user.css',
                 'resources/css/footer.css',
                 'resources/css/show.css'
@@ -37,7 +37,8 @@
 
         @vite([ 
             'resources/js/app.js',
-            'resources/js/script.js'
+            'resources/js/script.js',
+            'resources/js/user.js'
         ]) 
     </body>
 </html>

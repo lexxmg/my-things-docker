@@ -1,5 +1,7 @@
 .edit-user__name {
+  margin: 30px 0 10px 0;
 
+  font-weight: 600;
 }
 
 .edit-user {
@@ -15,9 +17,19 @@
 }
 
 .edit-user__btn-container-bottom {
-  margin: 20px 0 0 0;
+  margin: 60px 0 0 0;
 }
 
 .edit-user__link {
   width: 100%;
+}
+
+.destroy--red {
+  background-color: red;
+
+  color: #ccc;
+}
+
+.destroy--red:hover {
+  color: red !important;
 }

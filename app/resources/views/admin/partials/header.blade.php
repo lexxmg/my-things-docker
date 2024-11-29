@@ -29,7 +29,7 @@
 
   <div class="header__right header-right">
       <span class="header-right__text">{{ auth('admin')->user()->name }}</span>
-      <a class="header-right__link" href="{{ route('admin.logout') }}">
+      <a class="header-right__link admin-close-btn-js" href="{{ route('admin.logout') }}">
         <span class="header-right__text">выход</span>
       </a>
   </div>

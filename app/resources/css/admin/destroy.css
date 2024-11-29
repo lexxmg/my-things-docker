@@ -1,0 +1,44 @@
+.destroy {
+  
+}
+
+.destroy__text {
+  margin: 40px 0;
+}
+
+.destroy__form {
+  margin: 0 auto;
+}
+
+.form__destroy-text {
+  font-weight: 600;
+}
+
+.destroy__btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.destroy__btn {
+  margin: 0 7px 0 0;
+}
+
+.btn:last-child {
+  margin: 0;
+}
+
+.btn-destroy--green {
+  background-color: #3fa157;
+
+  color: #ccc;
+}
+
+.btn-destroy--red {
+  background-color: red;
+
+  color: #ccc;
+}
+
+.destroy__btn:hover:not(.btn-destroy--green) {
+  color: red;
+}
