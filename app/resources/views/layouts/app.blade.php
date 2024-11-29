@@ -4,6 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+        <!-- 180x180 - ставим первым для safari --> 
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any"><!-- 32x32 --> 
+        <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml"> 
+        <link rel="manifest" href="/favicon/manifest.webmanifest">
+
         <title>@yield('title')</title>
 
         @vite([ 'resources/css/normalize.css',
