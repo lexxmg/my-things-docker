@@ -21,6 +21,7 @@
                 'resources/css/header.css',
                 'resources/css/admin/main.css',
                 'resources/css/admin/home.css',
+                'resources/css/admin/user-card.css',
                 'resources/css/footer.css'
             ]) 
     </head>
@@ -32,8 +33,9 @@
 
         @vite([ 
             'resources/js/app.js',
+            'resources/js/views.js',
             'resources/js/script.js',
-            'resources/js/user.js'
+            'resources/js/user.js',
         ]) 
     </body>
 </html>

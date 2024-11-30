@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\api;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class GetUserJsonController extends Controller
 {
@@ -13,5 +14,18 @@ class GetUserJsonController extends Controller
     public function index()
     {
         return User::simplePaginate(15)->toJson();
+    }
+
+    /**
+     * Поиск пользователуй
+     */
+    public function search(Request $request)
+    {
+        $search = $request->search ?? '000';
+
+        return User::where('name', 'like', '%' . $search . '%')
+            ->orWhere('description', 'like', '%' . $search . '%')
+            ->orWhere('email', 'like', '%' . $search . '%')
+            ->get()->toJson();
     }
 }

@@ -6,12 +6,12 @@
                     <span class="footer-nav-list__text icon-home"></span>Главная
                 </a>
           </li>
-          <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('search.index')])">
-                <a class="footer-nav-list__link" href="{{ route('search.index') }}">
+          <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('admin.search')])>
+                <a class="footer-nav-list__link" href="{{ route('admin.search') }}">
                     <span class="footer-nav-list__text icon-search"></span>Поиск
                 </a>
           </li>
-          <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('admin.setting')])">
+          <li @class(['footer-nav-list__item', 'a--active' => request()->routeIs('admin.setting')])>
                 <a class="footer-nav-list__link" href="{{ route('admin.setting') }}">
                     <span class="footer-nav-list__text icon-settingsfour-gearsalt"></span>Настройки
                 </a>

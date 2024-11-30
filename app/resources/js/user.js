@@ -1,5 +1,7 @@
 "use strict";
 
+import { userCard } from './views';
+
 const users = document.querySelector('.user-js'),
       toAdminBtn = document.querySelectorAll('.admin-close-btn-js');
 
@@ -139,27 +141,7 @@ async function nextPages(url, direction = 'next') {
     let description = user.description || 'Описание отсутствует';
     page.dataset.page = json.current_page;
     
-    page.insertAdjacentHTML(dir, `
-      <div class="home__card">
-          <img class="home__img" src="" alt="">
-
-          <div class="home__inner">
-            <div class="home__top">
-              <h3 class="home__title">Имя:</h3>
-              <span class="home__text">${user.id}--${json.current_page}--${user.name}</span>
-
-              <div class="home__arrow icon-chevron-right"></div>
-            </div>
-
-            <div class="home__content">
-              <p class="home__description">${description}</p>
-            </div>
-
-            <a class="home__link link-js" href="user/${user.id}/edit" aria-label="Открыть карточку"></a>
-          </div>
-        </div>
-      </div>
-    `);
+    page.insertAdjacentHTML(dir, userCard({description, user, json}));
   });
 
   if (dir === 'beforeend') {
@@ -168,7 +150,6 @@ async function nextPages(url, direction = 'next') {
     users.prepend(page);
   }
   
-
   const scrollTop = localStorage.getItem('scrollTop');
   const currentPage = json.path + '?page=' + json.current_page;
 

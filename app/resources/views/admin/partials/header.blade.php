@@ -20,6 +20,9 @@
               <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('admin.user.index')])>
                   <a class="header-nav-list__link" href="{{ route('admin.user.index') }}">Главная</a>
               </li>
+              <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('admin.search')])>
+                <a class="header-nav-list__link" href="{{ route('admin.search') }}">Поиск</a>
+              </li>
               <li @class(['header-nav-list__item', 'a--active' => request()->routeIs('admin.setting')])>
                 <a class="header-nav-list__link" href="{{ route('admin.setting') }}">Настройки</a>
             </li>
