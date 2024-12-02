@@ -6,11 +6,6 @@ const search = document.querySelector('.search-js');
 const url = window.location.origin + '/admin/search-user-json';
 
 if (search) {
-  console.log(url);
-  
-  //const formData = new FormData(form);
-  //console.log(formData)
-  
   getUsers(url, 'тест').then( res => {
     
   });
@@ -29,14 +24,12 @@ async function getUsers(url, find = '') {
 		body: formData
 	})
 
-  const json = await res.json();   
-  const data = json;
+  const data = await res.json();   
 
   console.log(data);
 
   data.forEach(user => {
-    
-    let description = user.description || 'Описание отсутствует';
+    const description = user.description || 'Описание отсутствует';
     
     search.insertAdjacentHTML('beforeend', userCard({description, user}));
   });
