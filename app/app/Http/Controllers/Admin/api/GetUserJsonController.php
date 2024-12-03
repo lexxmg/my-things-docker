@@ -25,7 +25,8 @@ class GetUserJsonController extends Controller
 
         return User::where('name', 'like', '%' . $search . '%')
             ->orWhere('description', 'like', '%' . $search . '%')
-            ->orWhere('email', 'like', '%' . $search . '%')
             ->get()->toJson();
+
+        //->orWhere('email', 'like', '%' . $search . '%')    
     }
 }

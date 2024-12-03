@@ -7,11 +7,12 @@ const users = document.querySelector('.user-js'),
 
 
 if (users) {
-  let url = window.location.origin + '/admin/user-json?page=1';
+  let url = '/admin/user-json?page=1';
   let prevUrl = null;
   let prevMem = null;
   let currentPage = '';
   let scrollHeight = 0;
+
   
 
   if ( localStorage.getItem('currentPage') ) {
@@ -24,13 +25,13 @@ if (users) {
     window.localStorage.removeItem('prevUrl');
   }
 
+  
   const start = document.createElement('div');
   start.style.height = '1px';
   users.before(start);
 
   const end = document.createElement('div');
   end.style.height = '1px';
-  //end.style = 'height: 100px, border: 1px solid red';
   users.after(end);
 
   const options = {
@@ -39,52 +40,65 @@ if (users) {
     threshold: 1.0,
   };
   const next = function (entries, observer) {
-    entries.forEach(item => {
+    entries.forEach(async (item) => {
       if (item.isIntersecting && url)  {
-        nextPages(url, 'next').then( res => {
-          url = res.next;
-          prevMem = res.prev;
-          currentPage = res.current;
-          console.log('next--' + res.next);
+        const res = await nextPages(url, 'next')
+        url = res.next;
+        prevMem = res.prev;
+        currentPage = res.current;
+        console.log('next--' + res.next);
 
 
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          console.log(scrollTop);
-          
-          scrollHeight += res.height;
-          console.log('next-height__' + (scrollHeight - scrollTop));
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(scrollTop);
+        
+        scrollHeight += res.height;
+        console.log('next-height__' + (scrollHeight - scrollTop));
 
-          //scrollHeight = users.scrollHeight;
-        });
+        if ( localStorage.getItem('cardId') ) {
+          const id = localStorage.getItem('cardId');
+          let el = document.querySelector(`[data-id = "${id}"]`);
+
+          if (!el) {
+            const res = await nextPages(url, 'next');
+            prevUrl = res.prev;
+            el = document.querySelector(`[data-id = "${id}"]`);
+            window.localStorage.removeItem('cardId');
+            console.log('еще раз');
+            console.log(el);
+          }
+          console.log(el);
+          el.scrollIntoView(false);
+          el.scrollBy(0, 100);
+          window.localStorage.removeItem('cardId');
+        }
       }
     });
-  
   };
 
   const prev = function (entries, observer) {
-    entries.forEach(item => {
+    entries.forEach(async (item) => {
       if (item.isIntersecting && prevUrl)  {
-        nextPages(prevUrl, 'prev').then( res => {
-          prevUrl = res.prev;
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          window.scrollTo(0, res.height + scrollTop);
+        const res = await nextPages(prevUrl, 'prev');
+        prevUrl = res.prev;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        window.scrollTo(0, res.height + scrollTop);
 
-          if ( localStorage.getItem('comeBack') ) {
-            //window.scrollTo(0, 1000);
-            window.localStorage.removeItem('comeBack');
-            //window.scrollTo(0, scrollHeight + 275);
-          } else {
-            
-           // window.scrollTo(0, scrollHeight + 275);
-          }
+        if ( localStorage.getItem('comeBack') ) {
+          //window.scrollTo(0, 1000);
+          window.localStorage.removeItem('comeBack');
+          //window.scrollTo(0, scrollHeight + 275);
+        } else {
+          
+          // window.scrollTo(0, scrollHeight + 275);
+        }
 
-          console.log('prev--' + res.prev);
-          //console.log('prev-height-' + res.height);
-        });
+        console.log('prev--' + res.prev);
+        //console.log('prev-height-' + res.height);
       }
     });
-  
-  };
+  }
+
   const observerPre = new IntersectionObserver(prev, options);
   const observerNext = new IntersectionObserver(next, options);
 
@@ -93,9 +107,13 @@ if (users) {
 
   users.addEventListener('click', event => {
     const target = event.target;
-    if (target.className === 'home__link link-js') {
+    
+    if (target.classList.contains('link-js')) {
+      const id = target.closest('.user-card').dataset.id
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
       //localStorage.setItem('scrollTop', scrollHeight - scrollTop);
+      localStorage.setItem('cardId', id);
       localStorage.setItem('comeBack', true);
       localStorage.setItem('prevUrl', prevMem);
       localStorage.setItem('currentPage', currentPage);
@@ -104,7 +122,7 @@ if (users) {
 }
 
 if (toAdminBtn) {
-  const url = window.location.origin + '/admin/logout';
+  const url = '/admin/logout';
 
   toAdminBtn.forEach(btn => {
     btn.addEventListener('click', event => {
@@ -127,7 +145,6 @@ async function nextPages(url, direction = 'next') {
   const data = json.data;
 
   
-
   if (direction === 'prev') {
     dir = 'afterbegin';
     data.reverse();
