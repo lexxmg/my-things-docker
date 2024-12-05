@@ -91,6 +91,9 @@ class PasswordController extends Controller
             'password_confirmation' => ['required',],
         ], $this->messages());
 
+        $extention = $request->file('image')->getClientOriginalExtension();
+        $path = $request->file('image')->storeAs('user_id-' . $id, 'avatar.' . $extention, 'public');
+
         $user->name = $credentials['name'];
         $user->password = bcrypt($credentials['password']);
         $user->save();
