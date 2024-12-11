@@ -36,4 +36,8 @@
         <span class="header-right__text">выход</span>
       </a>
   </div>
+
+  @vite([ 
+    'resources/js/admin-setting.js'
+  ]) 
 </header>

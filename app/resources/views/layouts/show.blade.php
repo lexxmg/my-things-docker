@@ -23,12 +23,15 @@
                 'resources/css/setting.css',
                 'resources/css/password.css',
                 'resources/css/destroy.css',
+                'resources/css/add-avatar.css',
                 'resources/css/footer.css',
                 'resources/css/show.css'
             ]) 
     </head>
 
     <body>
+        @include('partials/placeholder')
+        
         <div class="wrapper">
             @yield('content')
         </div>

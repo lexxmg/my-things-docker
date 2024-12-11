@@ -1,0 +1,40 @@
+.add-avatar {
+  
+}
+
+.add-avatar__text {
+  margin: 40px 0;
+}
+
+.add-avatar__form {
+  margin: 0 auto;
+}
+
+.add-avatar__btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-avatar__btn {
+  margin: 0 7px 0 0;
+}
+
+.btn:last-child {
+  margin: 0;
+}
+
+.btn-add-avatar--green {
+  background-color: #3fa157;
+
+  color: #ccc;
+}
+
+.btn-add-avatar--red {
+  background-color: red;
+
+  color: #ccc;
+}
+
+/* .add-avatar__btn:hover:not(.btn-add-avatar--green) {
+  color: red;
+} */

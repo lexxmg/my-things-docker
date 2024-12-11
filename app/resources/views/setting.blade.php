@@ -26,6 +26,9 @@
           <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('password.index') }}">Сменить пароль</a>
         </li>
         <li class="setting__items">
+          <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('avatar.index') }}">Загрузить аватар</a>
+        </li>
+        <li class="setting__items">
           <a class="setting__link btn setting--btn remove-btn-js" href="{{ route('password.create') }}">Выйти на всех устройствах</a>
         </li>
         <li class="setting__items hidden">

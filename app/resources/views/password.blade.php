@@ -10,7 +10,7 @@
 
     <div class="password">
       <div class="form password__form">
-        <form class="form__form" action="{{ route('password.update', auth('web')->user()->id) }}" method="POST" enctype="multipart/form-data">
+        <form class="form__form" action="{{ route('password.update', auth('web')->user()->id) }}" method="POST">
           @csrf
           @method('PUT')
 
@@ -48,16 +48,6 @@
                   id="password_confirmation" 
                   type="password" 
                   name="password_confirmation"
-            >
-          </div>
-
-          <div class="form__inner">
-            <label class="form__label" for="image">Добавить фото:</label>
-            <input class="form__input"
-                  id="image" 
-                  type="file"
-                  name="image"
-                  accept="image/*"
             >
           </div>
   

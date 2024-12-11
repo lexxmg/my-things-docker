@@ -82,6 +82,43 @@ h1, h2, h3, p, figure {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.25));
 }
 
+.placeholder {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  background-color: #f9f9f9;
+
+  /* background: rgba(0, 0, 0, .5);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000); */
+}
+
+.placeholder__img {
+  display: block;
+
+  margin: 0 10px 0 0;
+
+  width: 25px;
+  height: 25px;
+
+  /* margin: 400px auto; */
+}
+
+.placeholder__text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.placeholder-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*============================================================*/
 
 @media (max-width: 665px) { /* Мобильная версия */

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\BoxController;
 use App\Http\Controllers\DestroyController;
 use App\Http\Controllers\HomeController;
@@ -26,6 +27,7 @@ Route::middleware(['auth:web', 'auth.session'])->group(function () {
   Route::delete('destroy/{id}', [DestroyController::class, 'destroy'])->name('destroy');
 
   Route::resource('password', PasswordController::class);
+  Route::resource('avatar', AvatarController::class);
   Route::resource('things', ThingController::class);
   Route::resource('boxes', BoxController::class);
   Route::resource('search', SearchController::class);

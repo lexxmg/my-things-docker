@@ -25,6 +25,8 @@
     </head>
 
     <body>
+        @include('partials/placeholder')
+
         <div class="wrapper">
             @yield('content')
         </div>

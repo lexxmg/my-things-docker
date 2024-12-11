@@ -121,21 +121,6 @@ if (users) {
   });
 }
 
-if (toAdminBtn) {
-  const url = '/admin/logout';
-
-  toAdminBtn.forEach(btn => {
-    btn.addEventListener('click', event => {
-      event.preventDefault();
-      
-      fetch(url).then(res => {
-        if (res.ok) {
-          window.close();
-        }
-      });
-    });
-  });
-}
 
 async function nextPages(url, direction = 'next') {
   let dir = 'beforeend';
