@@ -14,9 +14,13 @@
       </p>
 
       <div class="form add-avatar__form">
-        <form class="form__form" action="{{ route('avatar.update', ['avatar' => auth('web')->user()->id]) }}" method="POST"  enctype="multipart/form-data">
+        <form class="form__form form__form-js" action="{{ route('avatar.update', ['avatar' => auth('web')->user()->id]) }}" method="POST"  enctype="multipart/form-data">
           @csrf
           @method('PUT')
+
+          <div id="previev"></div>
+          
+          <input type="hidden" name="base64_image">
 
           <div class="form__inner">
             <label class="form__label" for="image">Добавить фото:</label>
@@ -40,6 +44,8 @@
 
   @vite([ 
     'resources/js/add-avatar.js'
-  ]) 
+  ])
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
   @include('partials.footer')
 @endsection

@@ -10,6 +10,8 @@
         <link rel="icon" href="/favicon/icon.svg" type="image/svg+xml"> 
         <link rel="manifest" href="/favicon/manifest.webmanifest">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.css" integrity="sha512-2eMmukTZtvwlfQoG8ztapwAH5fXaQBzaMqdljLopRSA0i6YKM8kBAOrSSykxu9NN9HrtD45lIqfONLII2AFL/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <title>@yield('title')</title>
 
         @vite([ 'resources/css/normalize.css',

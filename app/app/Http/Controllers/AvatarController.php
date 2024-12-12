@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Image;
 
 class AvatarController extends Controller
 {
@@ -59,11 +60,17 @@ class AvatarController extends Controller
         if (Auth::id() != $avatar) {
             return abort(404);
         }
-
+//dd($request);
         $user = User::find($avatar);
 
-        $extention = $request->file('image')->getClientOriginalExtension();
-        $path = $request->file('image')->storeAs('user_' . $user->name, 'avatar.' . $extention, 'public');
+        $file = $request->base64_image;
+        $data = explode(',', $file);
+        $extention = explode(';', explode('/', $data[0])[1])[0];
+        $data = base64_decode($data[1]);
+        file_put_contents(public_path('img/aa.' . $extention), $data);
+       // dd($data);
+        //$extention = $request->file('base64_image')->getClientOriginalExtension();
+        //$path = Image::make($data)->storeAs('user_' . $user->name, 'avatar.' . $extention, 'public');
 
         //$user->avatar = $path;
         
