@@ -12,7 +12,7 @@
       <p class="add-avatar__text">
         Здесь можно утановить аватар (отобразаеться только в десктопной версии)
       </p>
-
+      
       <div class="form add-avatar__form">
         <form class="form__form form__form-js" action="{{ route('avatar.update', ['avatar' => auth('web')->user()->id]) }}" method="POST"  enctype="multipart/form-data">
           @csrf

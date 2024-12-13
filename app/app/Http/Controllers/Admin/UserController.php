@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -112,6 +111,12 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
+        $user = User::find($id);
+
+        if ( isset($user->catalog_name) ) {
+            Storage::disk('public')->deleteDirectory($user->catalog_name);
+        }
+
         User::destroy($id);
         
         return redirect(route('admin.user.index'));

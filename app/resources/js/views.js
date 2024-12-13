@@ -3,7 +3,10 @@ export function userCard({user, description, json = {}}) {
   
   return `
       <div class="user-card" data-id="${user.id}">
-          <img class="user-card__img" src="" alt="">
+          <img class="user-card__img"
+            src="${user.thumbnail ? /storage/ + user.thumbnail : ''}"
+            alt="${description}"
+          >
 
           <div class="user-card__inner">
             <div class="user-card__top">

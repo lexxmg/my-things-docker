@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DestroyController extends Controller
 {
@@ -25,6 +26,8 @@ class DestroyController extends Controller
             return abort(404);
         }
 
+        $user = User::find($id);
+
         $credentials = $request->validate([
             'password' => ['required'],
         ], $this->messages());
@@ -37,6 +40,10 @@ class DestroyController extends Controller
 
             $request->session()->invalidate();
             $request->session()->regenerateToken();
+
+            if ( isset($user->catalog_name) ) {
+                Storage::disk('public')->deleteDirectory($user->catalog_name);
+            }
         } catch (\Throwable $th) {
             return back()->withInput()->withErrors([
                 'err' => 'Попробуйте ещё раз!'

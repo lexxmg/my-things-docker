@@ -37,6 +37,12 @@
   </div>
 
   <div class="header__right header-right">
+      <div class="header-right__img-container">  
+        @isset(auth('web')->user()->thumbnail)
+            <img class="header-right__img" src="{{ asset('/storage/' . auth('web')->user()->thumbnail) }}" alt="">
+        @endisset
+      </div>
+
       <span class="header-right__text">{{ auth('web')->user()->name }}</span>
       <a class="header-right__link" href="{{ route('logout') }}">
         <span class="header-right__text">выход</span>

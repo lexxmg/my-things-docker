@@ -20,6 +20,9 @@ return new class extends Migration
             $table->rememberToken();
             $table->text('description')->nullable();
             $table->boolean('admin')->default(false);
+            $table->string('image')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('catalog_name')->nullable();
             $table->timestamps();
         });
 
