@@ -4,6 +4,8 @@
 
 .setting__top {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   margin: 0 0 12px 0;
 }
@@ -13,6 +15,23 @@
 
   margin: 0 10px 0 0;
 }
+
+.setting__img-container {
+  display: flex;
+  align-items: center;
+}
+
+.setting__img {
+  display: block;
+
+  width: 50px;
+  height: 50px;
+
+  margin: 0 0 0 20px;
+
+  border: 1px solid transparent;
+}
+
 
 .setting__ul {
 

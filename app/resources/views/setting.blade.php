@@ -11,7 +11,14 @@
     <div class="setting">
       <div class="setting__top">
         <span class="setting__text">Текущий пользователь:</span>
-        <span class="setting__text">{{ auth('web')->user()->name }}</span>
+
+        <div class="setting__img-container">
+          <span class="setting__text">{{ auth('web')->user()->name }}</span>
+          
+          @isset(auth('web')->user()->thumbnail)
+              <img class="setting__img" src="{{ asset('/storage/' . auth('web')->user()->thumbnail) }}" alt="">
+          @endisset
+        </div>
       </div>
 
       <ul class="setting__ul">
