@@ -10,7 +10,7 @@
 
     <div class="add-avatar">
       <p class="add-avatar__text">
-        Здесь можно утановить аватар (отобразаеться только в десктопной версии)
+        Здесь можно утановить аватар:
       </p>
       
       <div class="form add-avatar__form">
@@ -22,19 +22,42 @@
           
           <input type="hidden" name="base64_image">
 
-          <div class="form__inner">
-            <label class="form__label" for="image">Добавить фото:</label>
-            <input class="form__input"
+          <div class="form__inner add-avatar__select-foto">
+            <label class="btn add-avatar--btn-full" for="image">Выбрать фото</label>
+            <input class="visually-hidden"
                   id="image" 
                   type="file"
-                  name="image"
+                  name="image[]"
                   accept="image/*"
                   capture="user"
             >
           </div>
+
+          <div class="form__inner add-avatar__camera-foto">
+            <label class="add-avatar__icon-label icon-camera" for="image-camera">
+              <span class="add-avatar__icon-text">Камера</span>
+            </label>
+            <input class="visually-hidden"
+                  id="image-camera" 
+                  type="file"
+                  name="image[]"
+                  accept="image/*"
+                  capture="user"
+            >
+
+            <label class="add-avatar__icon-label icon-folderalt" for="image-folder">
+              <span class="add-avatar__icon-text">Папка</span>
+            </label>
+            <input class="visually-hidden"
+                  id="image-folder" 
+                  type="file"
+                  name="image[]"
+                  accept="image/*"
+            >
+          </div>
   
           <div class="form__btn-container add-avatar__btn-container">
-            <button class="form__btn btn add-avatar__btn btn-js">Загрузить</button>
+            <button class="form__btn btn add-avatar__btn btn-js" disabled>Загрузить</button>
             <a class="btn setting--btn" href="{{ route('setting') }}">Отмена</a>
           </div>
         </form>

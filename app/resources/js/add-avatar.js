@@ -26,7 +26,7 @@ const previev = new Croppie(document.querySelector('#previev'), {
 //c.method(args);
 
 
-form.image.addEventListener('change', event => {
+form.addEventListener('change', event => {
   const file = event.target.files[0];
   const reader = new FileReader();
   
@@ -36,6 +36,8 @@ form.image.addEventListener('change', event => {
     const data = reader.result;
 
     await previev.bind({ url: data });
+    btn.removeAttribute('disabled');
+    btn.classList.remove('disabled');
   });
 });
 

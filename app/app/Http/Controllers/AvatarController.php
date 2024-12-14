@@ -65,6 +65,12 @@ class AvatarController extends Controller
         $user = User::find($avatar);
         $catalogName = 'user_id-' . $user->id;
 
+        $image = null;
+        foreach ($request->file('image') as $key => $value) {
+            $image = $value;
+        }
+        
+ 
         $file = $request->base64_image;
 
         $data = explode(',', $file);
@@ -74,8 +80,8 @@ class AvatarController extends Controller
 
         Storage::disk('public')->put($pathPreview, $data);
         
-        $extention = $request->file('image')->getClientOriginalExtension();
-        $path = $request->file('image')->storeAs($catalogName . '/original', 'avatar.' . $extention, 'public');
+        $extention = $image->getClientOriginalExtension();
+        $path = $image->storeAs($catalogName . '/original', 'avatar.' . $extention, 'public');
         
         $user->image = $path;
         $user->thumbnail = $pathPreview;

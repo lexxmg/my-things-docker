@@ -4,8 +4,8 @@ export function userCard({user, description, json = {}}) {
   return `
       <div class="user-card" data-id="${user.id}">
           <img class="user-card__img"
-            src="${user.thumbnail ? /storage/ + user.thumbnail : ''}"
-            alt="${description}"
+            src="${user.thumbnail ? /storage/ + user.thumbnail : '/img/avatar.png'}"
+            alt="${user.thumbnail ? 'Аватар пользователя' : 'Фото отсутствует'}"
           >
 
           <div class="user-card__inner">
