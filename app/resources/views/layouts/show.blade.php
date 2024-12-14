@@ -26,7 +26,7 @@
                 'resources/css/add-avatar.css',
                 'resources/css/footer.css',
                 'resources/css/show.css',
-                'resources/js/lib/croppie/croppie.css'
+                'resources/css/croppie.css',
             ]) 
     </head>
 

@@ -64,9 +64,9 @@
       </div>
     </div>
   </main>
-
+  <script src="/croppie/croppie.js"></script>
   @vite([ 
-    'resources/js/lib/croppie/croppie.js',
+    //'resources/js/lib/croppie/croppie.min.js',
     'resources/js/add-avatar.js'
   ])
   

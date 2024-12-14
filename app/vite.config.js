@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                    'resources/css/croppie.css',
                     'resources/css/app.css',
                     'resources/css/normalize.css',
                     'resources/css/master.css',
@@ -29,15 +30,13 @@ export default defineConfig({
                     'resources/css/admin/search.css',
                     'resources/css/admin/home.css',
                     'resources/css/admin/user-card.css',
-                    'resources/js/lib/croppie/croppie.css',
                     'resources/js/app.js',
                     'resources/js/script.js',
                     'resources/js/user.js',
                     'resources/js/views.js',
                     'resources/js/search.js',
                     'resources/js/add-avatar.js',
-                    'resources/js/admin-setting.js',
-                    'resources/js/lib/croppie/croppie.js'
+                    'resources/js/admin-setting.js'
                 ],
             refresh: true,
         }),
