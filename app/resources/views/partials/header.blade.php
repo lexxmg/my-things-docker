@@ -39,7 +39,12 @@
   <div class="header__right header-right">
       <div class="header-right__img-container">  
         @isset(auth('web')->user()->thumbnail)
-            <img class="header-right__img" src="{{ asset('/storage/' . auth('web')->user()->thumbnail) }}" alt="">
+            <a href="{{ route('avatar.index') }}">
+                <img class="header-right__img" 
+                    src="{{ asset('/storage/' . auth('web')->user()->thumbnail) }}"
+                    alt="{{ asset(auth('web')->user()->thumbnail) ? 'Аватар пользователя' : 'Фото отсутствует' }}"
+                >
+            </a>
         @endisset
       </div>
 

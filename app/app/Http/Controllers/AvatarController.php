@@ -56,13 +56,13 @@ class AvatarController extends Controller
     /**
      * Загрузить аватар
      */
-    public function update(Request $request, string $avatar)
+    public function update(Request $request, string $id)
     {
-        if (Auth::id() != $avatar) {
+        if (Auth::id() != $id) {
             return abort(404);
         }
 
-        $user = User::find($avatar);
+        $user = User::find($id);
         $catalogName = 'user_id-' . $user->id;
 
         $image = null;

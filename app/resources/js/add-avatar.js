@@ -22,9 +22,8 @@ const previev = new Croppie(document.querySelector('#previev'), {
     height: 300
   }
 });
-// call a method
-//c.method(args);
 
+//previev.bind({ url: '/storage/user_id-203/original/avatar.jpeg' });
 
 form.addEventListener('change', event => {
   const file = event.target.files[0];
