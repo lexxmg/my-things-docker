@@ -26,7 +26,7 @@ class AvatarController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,19 +38,53 @@ class AvatarController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Показать полноразмерное фото
      */
     public function show(string $id)
     {
-        //
+        if (Auth::id() != $id) {
+            return abort(404);
+        }
+
+        $user = User::find($id);
+        $image = $user->image;
+        $alt = 'Фото отсутствует';
+
+        if ($user->thumbnail) {
+            $alt = 'Аватар пользователя';
+        }    
+
+        return view('showAvatar', [
+            'title' => 'Аватар',
+            'image' => asset('/storage/' . $image),
+            'alt' => $alt,
+            'url' => url()->previous()
+        ]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Показать редактор фото 
      */
     public function edit(string $id)
     {
-        //
+        if (Auth::id() != $id) {
+            return abort(404);
+        }
+
+        $user = User::find($id);
+        $image = $user->image;
+        $alt = 'Фото отсутствует';
+
+        if ($user->thumbnail) {
+            $alt = 'Аватар пользователя';
+        }    
+
+        return view('editAvatar', [
+            'title' => 'Редактировать аватар',
+            'image' => asset('/storage/' . $image),
+            'alt' => $alt,
+            'url' => url()->previous()
+        ]);
     }
 
     /**
@@ -65,10 +99,12 @@ class AvatarController extends Controller
         $user = User::find($id);
         $catalogName = 'user_id-' . $user->id;
 
-        $image = null;
-        foreach ($request->file('image') as $key => $value) {
-            $image = $value;
-        }
+        $image = $request->file('image');
+        if ($image) {
+            foreach ($image as $key => $value) {
+                $image = $value;
+            }
+        }    
         
  
         $file = $request->base64_image;
@@ -80,10 +116,13 @@ class AvatarController extends Controller
 
         Storage::disk('public')->put($pathPreview, $data);
         
-        $extention = $image->getClientOriginalExtension();
-        $path = $image->storeAs($catalogName . '/original', 'avatar.' . $extention, 'public');
-        
-        $user->image = $path;
+        if ($image) {
+            $extention = $image->getClientOriginalExtension();
+            $path = $image->storeAs($catalogName . '/original', 'avatar.' . $extention, 'public');
+            
+            $user->image = $path;
+        }
+
         $user->thumbnail = $pathPreview;
         $user->catalog_name = $catalogName;
         $user->save();
@@ -96,6 +135,24 @@ class AvatarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if (Auth::id() != $id) {
+            return abort(404);
+        }
+        
+        $user = User::find($id);
+
+        if ( isset($user->catalog_name) ) {
+            Storage::disk('public')->delete([
+                $user->image,
+                $user->thumbnail
+            ]);
+
+            $user->image = null;
+            $user->thumbnail = null;
+            $user->catalog_name = null;
+            $user->save();
+        }
+
+        return redirect(route('home'));
     }
 }

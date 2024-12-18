@@ -24,6 +24,8 @@
                 'resources/css/password.css',
                 'resources/css/destroy.css',
                 'resources/css/add-avatar.css',
+                'resources/css/edit-avatar.css',
+                'resources/css/show-avatar.css',
                 'resources/css/footer.css',
                 'resources/css/show.css',
                 'resources/css/croppie.css',
@@ -31,7 +33,7 @@
     </head>
 
     <body>
-        @include('partials/placeholder')
+        @include('partials.placeholder')
         
         <div class="wrapper">
             @yield('content')

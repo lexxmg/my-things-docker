@@ -1,7 +1,7 @@
 "use strict";
 
 const btn = document.querySelector('.btn-js'),
-      placeholder = document.querySelector('.placeholder-js'),
+      placeholder = document.querySelector('.placeholder-show-js'),
       form = document.querySelector('.form__form-js');
 
 
@@ -19,21 +19,8 @@ const previev = new Croppie(document.querySelector('#previev'), {
   }
 });
 
-//previev.bind({ url: '/storage/user_id-203/original/avatar.jpeg' });
-
-form.addEventListener('change', event => {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  
-  reader.readAsDataURL(file);
-
-  reader.addEventListener('load', async () => {
-    const data = reader.result;
-
-    await previev.bind({ url: data });
-    btn.removeAttribute('disabled');
-    btn.classList.remove('disabled');
-  });
+previev.bind({ url: data.image }).then(() => {
+  placeholder.classList.remove('placeholder-show');
 });
 
 form.addEventListener('submit', async event => {

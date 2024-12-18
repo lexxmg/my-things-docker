@@ -1,5 +1,5 @@
 <div class="main-top">
-  <a href="{{ $url }}" class="main-top__link-back icon-chevron-left"aria-label="Назад"></a>
+  <a href="{{ $url }}" class="main-top__link-back icon-chevron-left" aria-label="Назад"></a>
 
   <h2 class="main-top__title">{{ $title }}</h2>
 

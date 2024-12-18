@@ -16,7 +16,7 @@
           <span class="setting__text">{{ auth('web')->user()->name }}</span>
           
           @isset(auth('web')->user()->thumbnail)
-            <a href="{{ route('avatar.index') }}">
+            <a href="{{ route('avatar.show', auth('web')->user()->id) }}">
               <img class="setting__img" 
                 src="{{ asset('/storage/' . auth('web')->user()->thumbnail) }}"
                 alt="{{ asset(auth('web')->user()->thumbnail) ? 'Аватар пользователя' : 'Фото отсутствует' }}"

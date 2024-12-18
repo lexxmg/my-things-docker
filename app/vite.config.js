@@ -26,6 +26,8 @@ export default defineConfig({
                     'resources/css/show.css',
                     'resources/css/destroy.css',
                     'resources/css/add-avatar.css',
+                    'resources/css/edit-avatar.css',
+                    'resources/css/show-avatar.css',
                     'resources/css/admin/destroy.css',
                     'resources/css/admin/search.css',
                     'resources/css/admin/home.css',
@@ -35,7 +37,9 @@ export default defineConfig({
                     'resources/js/user.js',
                     'resources/js/views.js',
                     'resources/js/search.js',
+                    'resources/js/show-avatar.js',
                     'resources/js/add-avatar.js',
+                    'resources/js/edit-avatar.js',
                     'resources/js/admin-setting.js'
                 ],
             refresh: true,
