@@ -1,6 +1,6 @@
 @extends('layouts.show')
 
-@section('title', 'Загрузить аватар')
+@section('title', 'Редактировать аватар')
 
 @section('content')  
   @include('partials.placeholder-show')
