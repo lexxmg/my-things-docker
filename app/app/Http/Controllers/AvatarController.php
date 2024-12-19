@@ -58,7 +58,8 @@ class AvatarController extends Controller
             'title' => 'Аватар',
             'image' => asset('/storage/' . $image),
             'alt' => $alt,
-            'url' => url()->previous()
+            'userId' => $id,
+            'url' => route('setting') //url()->previous()
         ]);
     }
 
@@ -133,13 +134,20 @@ class AvatarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
         if (Auth::id() != $id) {
             return abort(404);
         }
         
         $user = User::find($id);
+
+        if (!$request->delete) {
+            return view('alert', [
+                'text' => 'Вы точно хотите удалить аватар?',
+                'cencel' => url()->previous()
+            ]);
+        }
 
         if ( isset($user->catalog_name) ) {
             Storage::disk('public')->delete([

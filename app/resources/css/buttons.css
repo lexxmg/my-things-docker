@@ -88,6 +88,22 @@
   box-shadow: 0 0 0 2px blue;
 }
 
+.btn-mod--green {
+  background-color: #3fa157;
+
+  color: #ccc;
+}
+
+.btn-mod--red {
+  background-color: red;
+
+  color: #ccc;
+}
+
+.btn-mod--red:hover:not(.btn-mod--green) {
+  color: red;
+}
+
 
 @media (max-width: 320px) {
   .btn {

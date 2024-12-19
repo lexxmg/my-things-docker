@@ -25,7 +25,7 @@
 
           <div class="form__btn-container edit-avatar__btn-container">
             <button class="form__btn btn edit-avatar__btn btn-js">Применить</button>
-            <a class="btn setting--btn" href="{{ route('setting') }}">Отмена</a>
+            <a class="btn setting--btn" href="{{ route('avatar.show', auth('web')->user()->id) }}">Отмена</a>
           </div>
         </form>
       </div>
@@ -35,7 +35,8 @@
   <script src="/croppie/croppie.js"></script>
   @vite([ 
     //'resources/js/lib/croppie/croppie.min.js',
-    'resources/js/edit-avatar.js'
+    'resources/js/edit-avatar.js',
+    //'resources/js/placeholder-show.js',
   ])
   
   @include('partials.footer')
