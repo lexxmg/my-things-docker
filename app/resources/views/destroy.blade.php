@@ -38,7 +38,7 @@
   
           <div class="form__btn-container destroy__btn-container">
             <button class="form__btn btn destroy__btn btn-destroy--red">Удалить</button>
-            <a class="btn setting--btn btn-destroy--green" href="{{ route('setting') }}">Отмена</a>
+            <a class="btn setting--btn destroy__btn btn-destroy--green" href="{{ route('setting') }}">Отмена</a>
           </div>
         </form>
       </div>

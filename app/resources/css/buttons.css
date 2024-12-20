@@ -100,6 +100,11 @@
   color: #ccc;
 }
 
+.btn--min {
+  width: 125px;
+  height: 45px;
+}
+
 .btn-mod--red:hover:not(.btn-mod--green) {
   color: red;
 }

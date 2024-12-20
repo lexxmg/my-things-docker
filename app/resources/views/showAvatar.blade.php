@@ -52,7 +52,6 @@
   
   @vite([ 
     'resources/js/show-avatar.js'
-    //'resources/js/placeholder-show.js',
   ])
   
   @include('partials.footer')

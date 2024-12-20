@@ -9,7 +9,7 @@
         <span class="alert__text">{{ $text }}</span>
         
         <div class="alert__btn-container">
-          <a class="alert__cencel" href="{{ $cencel }}">Отменить</a>
+          <a class="alert__btn alert__cencel btn btn--min" href="{{ $cencel }}">Отменить</a>
 
           <form action="{{ route('avatar.destroy', auth('web')->user()->id) }}" method="POST">
             @csrf
@@ -17,14 +17,10 @@
 
             <input type="hidden" name="delete" value="true">
   
-            <button class="alert__delete">Удалить</button>
+            <button class="alert__btn alert__delete btn  btn--min btn-mod--red">Удалить</button>
           </form>
         </div>
       </div>
     </div>
   </main>
-  
-  @vite([ 
-    //'resources/js/show-avatar.js'
-  ])
 @endsection

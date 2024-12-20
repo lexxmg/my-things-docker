@@ -58,7 +58,7 @@
   
           <div class="form__btn-container add-avatar__btn-container">
             <button class="form__btn btn add-avatar__btn btn-js" disabled>Загрузить</button>
-            <a class="btn setting--btn" href="{{ route('setting') }}">Отмена</a>
+            <a class="btn add-avatar__btn setting--btn" href="{{ route('setting') }}">Отмена</a>
           </div>
         </form>
       </div>
@@ -66,7 +66,6 @@
   </main>
   <script src="/croppie/croppie.js"></script>
   @vite([ 
-    //'resources/js/lib/croppie/croppie.min.js',
     'resources/js/add-avatar.js'
   ])
   

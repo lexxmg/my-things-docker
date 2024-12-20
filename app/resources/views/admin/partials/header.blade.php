@@ -3,17 +3,6 @@
       <h1 class="header__title">Администрирование</h1>
   </div>
 
-  <nav class="nav-mob">
-      <ul class="nav-mob__list nav-mob-list">
-          <li class="nav-mob-list__item">
-              <a class="btn btn--things" href="{{ route('things.index') }}" @disabled(false)>Все вещи</a>
-          </li>
-          <li class="nav-mob-list__item">
-              <a class="btn btn--box" href="{{ route('boxes.index') }}" @disabled(false)>Коробки</a>
-          </li>
-      </ul>
-  </nav>
-
   <div class="header__center">
       <nav class="header-nav">
           <ul class="header-nav__list header-nav-list">

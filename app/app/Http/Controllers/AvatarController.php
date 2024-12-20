@@ -132,7 +132,7 @@ class AvatarController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удаление аватара
      */
     public function destroy(Request $request, string $id)
     {
@@ -142,7 +142,7 @@ class AvatarController extends Controller
         
         $user = User::find($id);
 
-        if (!$request->delete) {
+        if (!$request->delete) {   // Подтверждение удаления
             return view('alert', [
                 'text' => 'Вы точно хотите удалить аватар?',
                 'cencel' => url()->previous()

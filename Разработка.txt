@@ -15,6 +15,7 @@
 
 Запустить сервер разработки:
   ./vendor/bin/sail npm run dev
+  ./vendor/bin/sail npm run dev -- --host   // для доступа по ip
 
 Остановить Docker:
   ./vendor/bin/sail down -v    // с удалением контейнеров
