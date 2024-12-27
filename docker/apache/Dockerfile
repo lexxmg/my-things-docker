@@ -2,7 +2,7 @@ FROM php:8.3-apache
 
 # ip адрес и порт (если нужен нестандартный)
 # для https соеденения
-ENV SERVER_NAME=192.168.0.16:3016
+ENV SERVER_NAME=192.168.0.14:3016
 
 # Точка входа для Laravel
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public

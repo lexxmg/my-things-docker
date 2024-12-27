@@ -38,7 +38,7 @@
   width: 30px;
   height: 30px;
 
-  background-image: url(/public/storage/img/box.png);
+  background-image: url(/public/img/box.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -54,7 +54,7 @@
   width: 30px;
   height: 30px;
 
-  background-image: url(/public/storage/img/things.png);
+  background-image: url(/public/img/things.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

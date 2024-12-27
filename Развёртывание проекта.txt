@@ -12,6 +12,7 @@
 
 Выполнить artisan: 
   docker-compose run --rm artisan migrate // создание структуры базы данных
+  docker-compose run --rm artisan migrate --seed
 
 Остановить Docker:
   docker-compose down -v
